@@ -1,0 +1,364 @@
+body {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+  font-family: Roboto, Arial, sans-serif;
+}
+h1, h2 {
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+/* = = = = = = = = = = COMMON STYLES = = = = = = = = = =  */
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*.hidden {
+  display: none;
+}*/
+
+.container {
+  min-width: 855px;
+  max-width: 1146px;
+  margin: 0 auto;
+  padding-left: 2.25%;
+  padding-right: 2.25%;
+}
+
+.main-navigation {
+  float: left;
+}
+
+.main-navigation > ul > li {
+  position: relative;
+
+  display: inline-block;
+}
+
+.sub-navigation {
+  position: absolute;
+  z-index: 100;
+
+  display: none;
+  min-width: 144px;
+}
+
+.main-navigation > ul > li:hover .sub-navigation {
+  display: block;
+}
+
+.user-area {
+  float: right;
+}
+
+.search-block,
+.login-block,
+.cart-block {
+  position: relative;
+
+  display: inline-block;
+}
+
+.search-popup,
+.login-popup,
+.cart-popup {
+  position: absolute;
+  right: 0;
+  z-index: 100;
+
+  display: none;
+}
+
+.search-block:hover .search-popup {
+  display: block;
+}
+
+.login-block:hover .login-popup {
+  display: block;
+}
+
+.cart-block:hover .cart-popup {
+  display: block;
+}
+
+.cart-popup {
+  width: 540px;
+}
+
+.cart-product-preview {
+  display: inline-block;
+}
+
+.cart-product-title {
+  display: inline-block;
+
+  width: 220px;
+}
+
+.cart-purchase {
+  text-align: right;
+}
+
+.header-contact-block {
+  float: right;
+  clear: left;
+
+  text-align: right;
+}
+
+.product-box {
+  position: relative;
+
+  display: inline-block;
+  box-sizing: border-box;
+  width: 23.298429%;
+  margin-right: 2.26876%;
+  margin-bottom: 40px;
+
+  font-size: 14px;
+  vertical-align: top;
+  text-align: center;
+}
+
+.product-box:nth-child(4n) {
+  margin-right: 0;
+}
+
+.popular::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+
+  display: block;
+  width: 61px;
+  height: 61px;
+
+  background-image: url("../img/popular.png");
+}
+
+.product-box-price {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+
+  font-size: 20px;
+  color: #ffffff;
+
+}
+
+.product-box img {
+  width: 100%;
+}
+
+.footer-social {
+  float: left;
+}
+
+.footer-nav {
+  float: left;
+}
+
+.footer-copyright {
+  float: right;
+}
+
+/* = = = = = = = = = = INDEX PAGE STYLES = = = = = = = = = =  */
+
+.hero-slider {
+  position: relative;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.slider ul {
+  width: 300%;
+  height: 260px;
+}
+
+.slider li {
+  display: block;
+  float: left;
+  width: 33.333333%;
+  height: 100%;
+  padding-top: 240px;
+
+  text-align: center;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.slider-controls span {
+  cursor: pointer;
+}
+
+
+.promo {
+  margin-bottom: 40px;
+}
+
+.half-wide {
+  box-sizing: border-box;
+  width: 48.865619%;
+}
+
+.fourth-wide {
+  box-sizing: border-box;
+  width: 23.298429%;
+}
+
+.promo-item-left,
+.promo-item-right {
+  height: 229px;
+  padding: 20px;
+
+  border-radius: 12px;
+}
+
+.promo-item-left {
+  float: left;
+}
+
+.promo-item-right {
+  float: right;
+}
+
+.popular-products {
+  font-size: 0;
+}
+
+.features {
+  min-height: 306px;
+  padding: 20px;
+  margin-bottom: 40px;
+
+  border-radius: 12px;
+}
+
+.features-content {
+    width: 47.120418%;
+}
+
+.features-content-left {
+  float: left;
+}
+
+.features-content-right {
+  float: right;
+}
+
+.variable-index-content {
+  margin-bottom: 40px;
+}
+
+.blog-ad, .subscription {
+  height: 220px;
+}
+
+.blog-ad {
+  float: left;
+
+  padding: 20px;
+
+  border-radius: 12px;
+}
+
+.subscription {
+  float: right;
+
+  padding: 20px;
+
+  border-radius: 12px;
+}
+
+.index-contact-info {
+  position: relative;
+
+  height: 430px;
+}
+
+.map {
+  position: absolute;
+
+  width: 100%;
+}
+
+.container-contact {
+  position: relative;
+
+}
+
+.contact-box {
+  position: absolute;
+  top: 65px;
+  right: 2.25%;
+
+  width: 302px;
+  padding: 24px;
+
+  background-color: #ffffff;
+  border-radius: 12px;
+}
+
+/* = = = = = = = = = = CATALOG PAGE STYLES = = = = = = = = = =  */
+
+.catalog-filter {
+  margin-bottom: 40px;
+}
+
+.products {
+  font-size: 0;
+}
+
+.paginator {
+  margin-top: 80px;
+  margin-bottom: 40px;
+
+  text-align: right;
+}
+/* = = = = = = = = = = MODAL POPUP STYLES = = = = = = = = = =  */
+
+#feedback-popup {
+  /*display: none;*/
+  width: 427px;
+  padding: 25px;
+
+  background-color: tomato;
+  border-radius: 12px;
+}
+
+.modal-btn {
+  text-align: right;
+}
+
+/* = = = = = = = = = = ВРЕМЕННЫЕ СТИЛИ = = = = = = = = = =  */
+body {
+  padding: 0;
+  margin: 0;
+}
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container {
+  background-color: rgba(22, 176, 255, 0.7);
+}
+
+.header-popup, .promo-item, .sub-navigation, .features, .half-wide, .fourth-wide, .slider li {
+  background-color: rgba(22, 176, 255, 0.9);
+}
