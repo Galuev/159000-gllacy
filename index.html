@@ -19,30 +19,30 @@
           </h1>
           <nav class="main-nav">
             <ul class="top-level-nav">
-              <li>
+              <li class="top-level-item">
                 <a href="catalog.html">Каталог</a>
                 <ul class="sub-nav">
-                  <li>
+                  <li class="sub-nav-item">
                     <a href="#" class="nav-new-products">Новинки</a>
                   </li>
-                  <li>
+                  <li class="sub-nav-item">
                     <a href="catalog.html">Сливочное</a>
                   </li>
-                  <li>
+                  <li class="sub-nav-item">
                     <a href="#">Щербеты</a>
                   </li>
-                  <li>
+                  <li class="sub-nav-item">
                     <a href="#">Фруктовый лед</a>
                   </li>
-                  <li>
+                  <li class="sub-nav-item">
                     <a href="#">Мелорин</a>
                   </li>
                 </ul>
               </li>
-              <li>
+              <li class="top-level-item">
                 <a href="#">Доставка и оплата</a>
               </li>
-              <li>
+              <li class="top-level-item">
                 <a href="#">О Компании</a>
               </li>
             </ul>
@@ -263,23 +263,20 @@
             </div>
           </section>
           <div class="variable-index-content clearfix">
-          <!-- без этого дива получается вот так: https://monosnap.com/file/dNU4KwN0yZnXcfGjJRsvXuhlGM95zm
-          Если дочерние блоки ставить inline-block'ом - неудобно избавиться от пробела.  А с float все, что снизу -
-          лезет наверх. -->
             <div class="variable-content-item blog-ad half-wide">
-              <h2>Новое в нашем блоге</h2>
-              <h3>
+              <h2 class="blog-ad-subject">Новое в нашем блоге</h2>
+              <h3 class="blog-ad-theme">
                 <a href="#" class="a-bg">10  способов сервировки <br>фруктовых щербетов <br>к столу</a>
               </h3>
             </div>
             <div class="variable-content-item subscription half-wide">
               <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =) </p>
               <form action="#" method="post" class="subscription-form clearfix">
-                <button class="btn" type="submit">Отправить</button>
                 <div class="subscription-input-area">
                   <label for="subscribing-email" class="hidden">Электронная почта</label>
                   <input type="text" name="subscriber-email" placeholder="Электронная почта" class="input" id="subscribing-email">
                 </div>
+                <button class="btn" type="submit">Отправить</button>
               </form>
             </div>
           </div>
@@ -294,14 +291,14 @@
               <p>
                 Адрес главного офиса и<br>
                 офлайн магазина:<br>
-                <strong>
+                <strong class="contact-box-info">
                   ул. Большая Конюшенная<br>
                   19/8, Санкт-Петербург
                 </strong>
               </p>
               <p>
                 Для заказов по телефону:<br>
-                <strong>
+                <strong class="contact-box-info">
                   <a href="+78124502525">8 812 450-25-25</a>
                 </strong><br>
                 (с 10 до 20 ежедневно)
@@ -344,20 +341,20 @@
           <a href="https://htmlacademy.ru" class="a-nobg">HTML Academy</a> &copy; 2016
         </p>
       </footer>
-         <div class="feedback-popup">
+        <div class="feedback-popup">
           <button type="button" class="close-popup">Закрыть</button>
           <h4>Мы обязательно вам ответим!</h4>
           <form action="#" method="post" class="feedback-form">
             <div class="feedback-form-group">
-              <input type="text" name="name" class="input" id="person-name" placeholder="Как вас зовут?">
+              <input type="text" name="name" class="input feedback-name" id="person-name" placeholder="Как вас зовут?">
               <label for="person-name">Как вас зовут?</label>
             </div>
             <div class="feedback-form-group">
-              <input type="text" name="email" class="input" id="person-email" placeholder="Ваша почта для ответа?">
+              <input type="text" name="email" class="input feedback-email" id="person-email" placeholder="Ваша почта для ответа?">
               <label for="person-email">Ваша почта для ответа?</label>
             </div>
             <div class="feedback-form-group">
-              <textarea name="comment" class="input" id="person-comment" cols="30" rows="10">Напишите что-нибудь...</textarea>
+              <textarea name="comment" class="input feedback-comment" id="person-comment" cols="30" rows="10">Напишите что-нибудь...</textarea>
               <label for="person-comment">Напишите что-нибудь...</label>
             </div>
             <div class="modal-btn">
@@ -365,9 +362,7 @@
             </div>
           </form>
         </div>
-        <div class="popup-overlay"></div>
       </div>
-    </div>
   <script src="js/main.min.js"></script>
   </body>
 </html>

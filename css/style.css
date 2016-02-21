@@ -57,8 +57,6 @@ img {
   background-color: #f4ccd8;
 }
 
-/*нашел на каком-то форуме готовый кусок - как убрать placeholder'ы. Автопрефиксер
-их оставляет такими же, а в caniuse я даже не пойму по какому куску смотреть.*/
 :focus::-webkit-input-placeholder {
   color: transparent
 }
@@ -209,7 +207,7 @@ img {
   white-space: nowrap;
 }
 
-.top-level-nav > li {
+.top-level-item {
   position: relative;
   float: left;
   padding-bottom: 5px;
@@ -228,11 +226,11 @@ img {
   box-shadow: 0 20px 20px 0 rgba(0,0,0,0.4);
 }
 
-.top-level-nav > li:hover .sub-nav {
+.top-level-item:hover .sub-nav {
   display: block;
 }
 
-.top-level-nav > li > a {
+.top-level-item > a {
   font-weight: 700;
   display: block;
   padding-top: 5px;
@@ -243,13 +241,13 @@ img {
   border-radius: 16px;
 }
 
-.top-level-nav > li:hover > a {
+.top-level-item:hover > a {
   text-decoration: none;
   color: #333333;
   background-color: #F7F6F3;
 }
 
-.top-level-nav > li > a:active {
+.top-level-item > a:active {
   text-decoration: none;
   color: #333333;
   background-color: #F7F6F3;
@@ -261,7 +259,7 @@ img {
   background-color: #D07058;
 }
 
-.sub-nav li a {
+.sub-nav-item a {
   font-size: 14px;
   display: block;
   padding-top: 6px;
@@ -272,16 +270,16 @@ img {
   color: #343434;
 }
 
-.sub-nav li a:hover {
+.sub-nav-item a:hover {
   background-color: #FBDED7;
 }
 
-.sub-nav li a:active {
+.sub-nav-item a:active {
   background-color: #F6B5A5;
 }
 
-.sub-nav li .sub-nav-current,
-.sub-nav li .sub-nav-current:hover {
+.sub-nav-item .sub-nav-current,
+.sub-nav-item .sub-nav-current:hover {
   color: #FFFFFF;
   background-color: #D07058;
 }
@@ -420,9 +418,6 @@ img {
   padding-bottom: 10px;
 }
 
-/*.login-popup input[type="text"],
-.login-popup input[type="password"]*/
-.login-popup .input,
 .login-popup .input {
   width: 209px;
   margin-bottom: 10px;
@@ -548,6 +543,7 @@ img {
   padding-bottom: 9px;
   padding-left: 20px;
 }
+
 /* CONTACTS */
 .header-contact-area {
   float: right;
@@ -625,10 +621,14 @@ img {
 
 /*и показываем кнопку*/
 .product-box .btn {
+  display: none;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
   margin-bottom: 5px;
 }
 
-.product-box-wrapper:hover .product-box .btn {
+.product-box-wrapper:hover .btn {
   display: block;
   margin-bottom: 5px;
 }
@@ -641,13 +641,6 @@ img {
   padding-bottom: 15px;
   text-align: center;
   border-radius: 5px;
-}
-
-.product-box .btn {
-  display: none;
-  width: 100%;
-  padding-right: 0;
-  padding-left: 0;
 }
 
 /*H1 в товаре приводим к
@@ -665,7 +658,7 @@ img {
 }
 /*подчеркиваение исчезает
   при наведении на весь блок -> */
-.product-box:hover .product-box-title a {
+.product-box:hover a {
   text-decoration: none;
 }
 
@@ -800,12 +793,11 @@ img {
 /* = = = = = HERO SLIDER */
 .hero-slider {
   position: relative;
-  margin-bottom: 40px;
 }
 
 .slide {
   display: none;
-  height: 260px;
+  height: 252px;
   padding-top: 277px;
   text-align: center;
 }
@@ -826,7 +818,7 @@ img {
 
 .hero-slider-controls {
   position: absolute;
-  bottom: 22px;
+  bottom: 62px;
   left: 0;
   font-size: 0;
 }
@@ -1017,7 +1009,6 @@ body > input[type="radio"] {
 
 .variable-content-item {
   float: left;
-  display: inline-block;
   min-height: 220px;
   margin-right: 2.2%;
   border-radius: 14px;
@@ -1031,7 +1022,7 @@ body > input[type="radio"] {
   background: #FFFFFF url("../img/blog_bg.jpg") 100% 0 no-repeat;
 }
 
-.blog-ad h2 {
+.blog-ad-subject {
   font-size: 16px;
   font-weight: 500;
   margin-top: 4px;
@@ -1039,14 +1030,14 @@ body > input[type="radio"] {
   color: #5A5A5A;
 }
 
-.blog-ad h3 {
+.blog-ad-theme {
   font-size: 24px;
   line-height: 29px;
   margin-top: 0;
   color: #353535;
 }
 
-.blog-ad h3 a {
+.blog-ad-theme a {
   padding: 1px;
   padding-left: 0;
   /*border'ом эта линия получается ниже, чем надо. Я так понял, что это
@@ -1135,10 +1126,10 @@ body > input[type="radio"] {
   margin-bottom: 19px;
 }
 
-.contact-box strong,
-.contact-box strong a,
-.contact-box strong a:hover,
-.contact-box strong a:active {
+.contact-box-info,
+.contact-box-info a,
+.contact-box-info a:hover,
+.contact-box-info a:active {
   font-size: 18px;
   font-weight: 700;
   line-height: 22px;
@@ -1146,7 +1137,7 @@ body > input[type="radio"] {
   color: #343434;
 }
 
-.contact-box strong {
+.contact-box-info {
   display: inline-block;
   margin-top: 5px;
 }
@@ -1244,9 +1235,13 @@ body > input[type="radio"] {
   padding-bottom: 8px;
 }
 
-.feedback-form textarea {
-  min-width: 396px;
+.feedback-comment {
+  /*тут сделал строгие размеры - по-моему, лучше будет с
+  прокруткой, а то так можно в высоту растянуть и попап
+  во вьюпорт не поместится*/
+  width: 396px;
   height: 140px;
+  resize: none;
 }
 
 .feedback-form label {
@@ -1260,8 +1255,9 @@ body > input[type="radio"] {
   display: none;
 }
 
-.feedback-form input:focus ~ label,
-.feedback-form textarea:focus ~ label {
+.feedback-name:focus ~ label,
+.feedback-email:focus ~ label,
+.feedback-comment:focus ~ label {
   display: block;
 }
 
@@ -1327,14 +1323,8 @@ body > input[type="radio"] {
 }
 
 /* = = = = = = = = = = = CATALOG PAGE STYLES = = = = = = = = */
-/*Тут еще одна проблема появляется - если делать float:right блоку с контактами и разрешать
-всей остальной странице проваливаться вверх слева от этих контактов, то на главной странице еще появляется
-вот такая чушь: https://monosnap.com/file/0FjGG2PBmfKdYQMIXQqQwhkDgzJINN   - текст в слайдере начинает плясать.
-В общем, мне кажется, что это непродуманность макета. Решил оставить относительное позиционирование и подтянуть вверх
-main в каталоге (вот на нем класс весит container-catalog)*/
 .container-catalog {
-  position: relative;
-  top: -22px;
+  margin-top: -22px;
 }
 
 .products-area {
@@ -1581,8 +1571,8 @@ main в каталоге (вот на нем класс весит container-cat
   left: 150px;
 }
 
-.fat-content input,
-.fill-content input {
+.fat-content-option,
+.fill-content-option {
   display: none;
 }
 
@@ -1608,7 +1598,7 @@ main в каталоге (вот на нем класс весит container-cat
   border-radius: 50%;
 }
 
-.fat-content input:checked + label::after {
+.fat-content-option:checked + label::after {
   position: absolute;
   top: 5px;
   left: 5px;
@@ -1626,7 +1616,7 @@ main в каталоге (вот на нем класс весит container-cat
   cursor: pointer;
 }
 
-.fill-content label span {
+.fill-pseudo-checkbox {
   position: absolute;
   top: 0;
   left: 0;
@@ -1637,7 +1627,7 @@ main в каталоге (вот на нем класс весит container-cat
   border-radius: 3px;
 }
 
-.fill-content input:checked + label::before {
+.fill-content-option:checked + label::before {
   position: absolute;
   top: 9px;
   left: 5px;
@@ -1648,7 +1638,7 @@ main в каталоге (вот на нем класс весит container-cat
   background-color: #F8F7F4;
 }
 
-.fill-content input:checked + label::after {
+.fill-content-option:checked + label::after {
   position: absolute;
   top: 5px;
   left: 11px;

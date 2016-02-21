@@ -1,6 +1,9 @@
-var modal_show = document.querySelector(".show-feedback-modal");
 var modal = document.querySelector(".feedback-popup");
+//создаю оверлей для модального окна
+modal.insertAdjacentHTML('afterEnd', '<div class="popup-overlay"></div>');
 var overlay = document.querySelector(".popup-overlay");
+
+var modal_show = document.querySelector(".show-feedback-modal");
 var close_modal = modal.querySelector(".close-popup");
 
 var feedback_form = modal.querySelector("form");

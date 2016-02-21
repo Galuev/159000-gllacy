@@ -17,30 +17,30 @@
         </a>
         <nav class="main-nav">
           <ul class="top-level-nav">
-            <li>
+            <li class="top-level-item">
               <a href="catalog.html" class="top-level-nav-current">Каталог</a>
               <ul class="sub-nav">
-                <li>
+                <li class="sub-nav-item">
                   <a href="#" class="nav-new-products">Новинки</a>
                 </li>
-                <li>
+                <li class="sub-nav-item">
                   <a href="catalog.html" class="sub-nav-current">Сливочное</a>
                 </li>
-                <li>
+                <li class="sub-nav-item">
                   <a href="#">Щербеты</a>
                 </li>
-                <li>
+                <li class="sub-nav-item">
                   <a href="#">Фруктовый лед</a>
                 </li>
-                <li>
+                <li class="sub-nav-item">
                   <a href="#">Мелорин</a>
                 </li>
               </ul>
             </li>
-            <li>
+            <li class="top-level-item">
               <a href="#">Доставка и оплата</a>
             </li>
-            <li>
+            <li class="top-level-item">
               <a href="#">О Компании</a>
             </li>
           </ul>
@@ -172,27 +172,27 @@
           </div>
           <fieldset class="fat-content">
             <legend>Жирность:</legend>
-            <input type="radio" name="fat-content" id="zero-fat">
+            <input type="radio" name="fat-content" class="fat-content-option" id="zero-fat">
             <label for="zero-fat">0%</label>
-            <input type="radio" name="fat-content" id="low-fat">
+            <input type="radio" name="fat-content" class="fat-content-option" id="low-fat">
             <label for="low-fat">до 10%</label>
-            <input type="radio" name="fat-content" id="medium-fat">
+            <input type="radio" name="fat-content" class="fat-content-option" id="medium-fat">
             <label for="medium-fat">до 30%</label>
-            <input type="radio" name="fat-content" id="high-fat">
+            <input type="radio" name="fat-content" class="fat-content-option" id="high-fat">
             <label for="high-fat">выше 30%</label>
           </fieldset>
           <fieldset class="fill-content">
             <legend>Наполнители:</legend>
-            <input type="checkbox" name="fill-content" id="chocolate">
-            <label for="chocolate"><span></span>шоколадные</label>
-            <input type="checkbox" name="fill-content" id="sugar-powder">
-            <label for="sugar-powder"><span></span>сахарные присыпки</label>
-            <input type="checkbox" name="fill-content" id="fruits">
-            <label for="fruits"><span></span>фрукты</label>
-            <input type="checkbox" name="fill-content" id="syrup">
-            <label for="syrup"><span></span>сиропы</label>
-            <input type="checkbox" name="fill-content" id="jam">
-            <label for="jam"><span></span>джемы</label>
+            <input type="checkbox" name="fill-content" class="fill-content-option" id="chocolate">
+            <label for="chocolate"><span class="fill-pseudo-checkbox"></span>шоколадные</label>
+            <input type="checkbox" name="fill-content" class="fill-content-option" id="sugar-powder">
+            <label for="sugar-powder"><span class="fill-pseudo-checkbox"></span>сахарные присыпки</label>
+            <input type="checkbox" name="fill-content" class="fill-content-option" id="fruits">
+            <label for="fruits"><span class="fill-pseudo-checkbox"></span>фрукты</label>
+            <input type="checkbox" name="fill-content" class="fill-content-option" id="syrup">
+            <label for="syrup"><span class="fill-pseudo-checkbox"></span>сиропы</label>
+            <input type="checkbox" name="fill-content" class="fill-content-option" id="jam">
+            <label for="jam"><span class="fill-pseudo-checkbox"></span>джемы</label>
           </fieldset>
           <button class="filter-btn" type="submit">Применить</button>
         </form>
