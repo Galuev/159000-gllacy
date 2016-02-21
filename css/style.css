@@ -1,6 +1,6 @@
 /* = = = = = = = = = = = = =  COMMON STYLES = = = = = = = = = = = = = = = */
 body {
-  font-family: "Roboto", "Arial", sans-serif;
+  font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
@@ -21,10 +21,7 @@ img {
   height: auto;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="search"],
-textarea {
+.input {
   font-size: 14px;
   line-height: 24px;
   padding-top: 6px;
@@ -37,10 +34,7 @@ textarea {
   background-color: #FFFFFF;
 }
 
-input[type="text"]:hover,
-input[type="password"]:hover,
-input[type="search"]:hover,
-textarea:hover {
+.input:hover {
   padding-top: 5px;
   padding-right: 14px;
   padding-bottom: 6px;
@@ -48,12 +42,7 @@ textarea:hover {
   border: 2px solid #D3D3D2;
 }
 
-input[type="text"]:focus,
-input[type="text"]:active,
-input[type="password"]:focus,
-input[type="password"]:active,
-textarea:focus,
-textarea:active {
+.input:focus {
   font-weight: 700;
   padding-top: 5px;
   padding-right: 14px;
@@ -62,6 +51,28 @@ textarea:active {
   color: #353535;
   border: 2px solid #8FBDEC;
   outline: none;
+}
+
+.input-incorrect {
+  background-color: #f4ccd8;
+}
+
+/*нашел на каком-то форуме готовый кусок - как убрать placeholder'ы. Автопрефиксер
+их оставляет такими же, а в caniuse я даже не пойму по какому куску смотреть.*/
+:focus::-webkit-input-placeholder {
+  color: transparent
+}
+
+:focus::-moz-placeholder {
+  color: transparent
+}
+
+:focus:-moz-placeholder {
+  color: transparent
+}
+
+:focus:-ms-input-placeholder {
+  color: transparent
 }
 
 /*ссылки без фона*/
@@ -409,8 +420,10 @@ textarea:active {
   padding-bottom: 10px;
 }
 
-.login-popup input[type="text"],
-.login-popup input[type="password"] {
+/*.login-popup input[type="text"],
+.login-popup input[type="password"]*/
+.login-popup .input,
+.login-popup .input {
   width: 209px;
   margin-bottom: 10px;
 }
@@ -479,8 +492,7 @@ textarea:active {
   width: 1px;
   height: 12px;
   content: "";
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   background-color: #353535;
 }
 
@@ -491,8 +503,7 @@ textarea:active {
   width: 1px;
   height: 12px;
   content: "";
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
   background-color: #353535;
 }
 
@@ -539,8 +550,6 @@ textarea:active {
 }
 /* CONTACTS */
 .header-contact-area {
-  top: 0;
-  right: 0;
   float: right;
   clear: right;
   margin-top: -9px;
@@ -567,7 +576,6 @@ textarea:active {
   z-index: 20;
   top: 10px;
   left: 10px;
-  display: block;
   width: 61px;
   height: 61px;
   content: "";
@@ -616,6 +624,10 @@ textarea:active {
 }
 
 /*и показываем кнопку*/
+.product-box .btn {
+  margin-bottom: 5px;
+}
+
 .product-box-wrapper:hover .product-box .btn {
   display: block;
   margin-bottom: 5px;
@@ -781,45 +793,21 @@ textarea:active {
   margin-top: 21px;
   padding-top: 38px;
   text-align: left;
-  background: url("../img/main_sprite.svg") no-repeat 0 -505px;
+  background: url("../img/main_sprite.svg") no-repeat 0 -533px;
 }
 
 /* = = = = = = = = = = = = =  INDEX PAGE STYLES = = = = = = = = = = = = = = = */
-.index-wrapper {
-  background: url('../img/hero_slider/slide_01.jpg') no-repeat 50% 0;
-}
 /* = = = = = HERO SLIDER */
 .hero-slider {
   position: relative;
-  overflow: hidden;
   margin-bottom: 40px;
 }
 
-.hero-slider ul {
-  width: 300%;
+.slide {
+  display: none;
   height: 260px;
-}
-
-.hero-slider li {
-  display: block;
-  float: left;
-  width: 33.333333%;
   padding-top: 277px;
   text-align: center;
-}
-
-.hero-slider .btn {
-  margin-bottom: 4px;
-}
-
-.hero-slider-controls {
-  position: absolute;
-  bottom: 22px;
-  left: 0;
-}
-
-.slider-controls span {
-  cursor: pointer;
 }
 
 .slide-title {
@@ -832,12 +820,18 @@ textarea:active {
   color: #FFFFFF;
 }
 
+.hero-slider .btn {
+  margin-bottom: 4px;
+}
+
 .hero-slider-controls {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
   font-size: 0;
 }
 
-.slider-toggle {
-  font-size: 0;
+.hero-slider-controls label {
   display: inline-block;
   width: 17px;
   height: 17px;
@@ -848,13 +842,63 @@ textarea:active {
   border-radius: 50%;
 }
 
-.slider-toggle:hover {
+.hero-slider-controls label:hover {
   background-color: rgba(248, 247, 244, 0.4);
 }
 
-.slider-toggle:active,
-.slider-toggle-current {
-  background-color: #FFFFFF;
+body > input[type="radio"] {
+  display: none;
+}
+
+#btn-1:checked ~ .index-wrapper #slide1,
+#btn-2:checked ~ .index-wrapper #slide2,
+#btn-3:checked ~ .index-wrapper #slide3 {
+  display: block;
+}
+
+.index-wrapper {
+  background-repeat: no-repeat;
+  background-position: top center;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+/*Эти правила нужны для того, чтобы картинки начали раньше грузится - так уже было в демке.
+т.е. картинка грузится для того, чтобы отобразиться в псевдоэлементе, и когда юзер
+кликает на чекбоксы - картинки уже загружены и перелистываются плавно.*/
+.site-wrapper:before,
+.site-wrapper:after {
+  content: "";
+
+  visibility: hidden;
+}
+
+.site-wrapper:before,
+.site-wrapper:after {
+  background-image: url("slide-1.png");
+}
+
+.site-wrapper:after {
+  background-image: url("slide-2.png");
+}
+/*====*/
+#btn-1:checked ~ .index-wrapper {
+  background-color: #849d8f;
+  background-image: url("../img/hero_slider/slide_01.jpg");
+}
+
+#btn-2:checked ~ .index-wrapper {
+  background-color: #8996a6;
+  background-image: url("../img/hero_slider/slide_02.jpg");
+}
+
+#btn-3:checked ~ .index-wrapper {
+  background-color: #9d8b84;
+  background-image: url("../img/hero_slider/slide_03.jpg");
+}
+
+#btn-1:checked ~ .index-wrapper label[for="btn-1"],
+#btn-2:checked ~ .index-wrapper label[for="btn-2"],
+#btn-3:checked ~ .index-wrapper label[for="btn-3"] {
+  background-color: #ffffff;
 }
 
 /* = = = = = PROMO BLOCKS */
@@ -916,6 +960,9 @@ textarea:active {
   width: 48.875%;
 }
 
+/*Тут я решил features-content прижать float'ами каждый в свою сторону. Тогда не надо высчитывать margin
+у первого и убирать его у второго. Ведь, если сделать margin в общем правиле - все равно надо
+второй отбирать и обнулять margin*/
 .features-content:nth-child(2n) {
   float: left;
 }
@@ -970,6 +1017,7 @@ textarea:active {
 
 .variable-content-item {
   float: left;
+  display: inline-block;
   min-height: 220px;
   margin-right: 2.2%;
   border-radius: 14px;
@@ -1001,18 +1049,16 @@ textarea:active {
 .blog-ad h3 a {
   padding: 1px;
   padding-left: 0;
+  /*border'ом эта линия получается ниже, чем надо. Я так понял, что это
+  просто обычное оформление ссылки. Смотри, тут я сверху border поставил томатного цвета:
+  https://monosnap.com/file/pcjVEuVLjo32s6ervtISU4JaaO94Nd
+  А полупрозрачная подложка - в макете на 900px под текст заползает картинка, очевидно -
+  страховка для readability: https://monosnap.com/file/Rmjf6Svj0oDa2BoLDCxrXhy7kLtodg */
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-/*ТУТ ТОЖЕ НАЧИНАЕТСЯ АДИЩЕ
-не разобрался как в блоке подписки прижать книзу форму
-(input и кнопку) + растянуть input на всю оставшуюся ширину
-от кнопки. Вроде как надо сделать две колонки - одну фиксированную
-(для кнопки), вторую - резиновую для input'а. Но, чет, они у меня
-одна под другую становятся. Не разобрался. Пока что кнопку
-абсолютным позиционированием поставил на место.
-*/
 .subscription {
+  position: relative;
   padding-left: 22px;
   color: #5A5A5A;
   border-image-source: url("../img/subscription_border.png");
@@ -1027,19 +1073,24 @@ textarea:active {
 }
 
 .subscription-form {
-  position: relative;
-  width: 100%;
+  position: absolute;
+  right: 22px;
+  left: 22px;
+  bottom: 36px;
 }
 
 .subscription-input-area {
-  margin-right: 146px;
+  margin-right: 142px;
 }
 
 .subscription input[type="text"] {
   box-sizing: border-box;
   width: 100%;
+  margin-right: 80px;
+  float: left;
   padding-top: 8px;
   padding-bottom: 10px;
+  margin-right: 11px;
 }
 
 .subscription input[type="text"]:hover,
@@ -1050,11 +1101,8 @@ textarea:active {
 }
 
 .subscription .btn {
-  font-size: 17px;
-  position: absolute;
-  right: 0;
-  top:0;
   float: right;
+  font-size: 17px;
 }
 
 /* = = = = = CONTACT INFO */
@@ -1066,7 +1114,7 @@ textarea:active {
   width: 100%;
   height: 430px;
   /*без задания высоты почему-то добавляет 6px внизу карты*/
-  background-color: #F4F2ED;
+  background: #F4F2ED url('../img/map.jpg') no-repeat 50% 0;
 }
 
 .contact-box {
@@ -1161,8 +1209,7 @@ textarea:active {
   width: 2px;
   height: 23px;
   content: "";
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   background-color: #000000;
 }
 
@@ -1173,8 +1220,7 @@ textarea:active {
   width: 2px;
   height: 23px;
   content: "";
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
   background-color: #000000;
 }
 
@@ -1199,22 +1245,11 @@ textarea:active {
 }
 
 .feedback-form textarea {
-  width: 396px;
+  min-width: 396px;
   height: 140px;
-  resize: none;
 }
 
 .feedback-form label {
-  font-size: 16px;
-  line-height: 24px;
-  position: absolute;
-  top: 9px;
-  left: 16px;
-  color: #9B9B9B;
-}
-
-.feedback-form input:focus ~ label,
-.feedback-form textarea:focus ~ label {
   font-size: 11px;
   line-height: 22px;
   position: absolute;
@@ -1222,6 +1257,12 @@ textarea:active {
   left: 16px;
   display: block;
   color: #5B9DDF;
+  display: none;
+}
+
+.feedback-form input:focus ~ label,
+.feedback-form textarea:focus ~ label {
+  display: block;
 }
 
 .modal-btn {
@@ -1238,13 +1279,59 @@ textarea:active {
   left: 0;
   display: none;
   background-color: rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%   {
+    transform: translateY(2000px);
+  }
+  70%  {
+    transform: translateY(-25px);
+  }
+  85%  {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+.show-modal {
+  display: block;
+  animation: bounce 0.6s;
+}
+
+.show-overlay {
+  display: block;
+}
+
+.modal-error {
+  animation: shake 0.6s;
+}
+
+.transparent {
+  color: transparent;
 }
 
 /* = = = = = = = = = = = CATALOG PAGE STYLES = = = = = = = = */
-/*как еще обойти момент на странице каталога, когда бредкрамбс и заголовок залезают
-на одну высоту с контактами в хедере - не придумал. Если делать флоут вправа контактам
-и разрешить крошкам и заголовку обтекать их слева - не камильфо. Если заголовок длинный будет
-- упрется в эти контакты и все будет плясать.*/
+/*Тут еще одна проблема появляется - если делать float:right блоку с контактами и разрешать
+всей остальной странице проваливаться вверх слева от этих контактов, то на главной странице еще появляется
+вот такая чушь: https://monosnap.com/file/0FjGG2PBmfKdYQMIXQqQwhkDgzJINN   - текст в слайдере начинает плясать.
+В общем, мне кажется, что это непродуманность макета. Решил оставить относительное позиционирование и подтянуть вверх
+main в каталоге (вот на нем класс весит container-catalog)*/
 .container-catalog {
   position: relative;
   top: -22px;
@@ -1355,8 +1442,7 @@ textarea:active {
   width: 2px;
   height: 10px;
   content: "";
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   background-color: #FFFFFF;
 }
 .prev::after {
@@ -1366,8 +1452,7 @@ textarea:active {
   width: 2px;
   height: 10px;
   content: "";
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
   background-color: #FFFFFF;
 }
 
@@ -1378,8 +1463,7 @@ textarea:active {
   width: 2px;
   height: 10px;
   content: "";
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
   background-color: #FFFFFF;
 }
 .next::after {
@@ -1389,8 +1473,7 @@ textarea:active {
   width: 2px;
   height: 10px;
   content: "";
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   background-color: #FFFFFF;
 }
 
@@ -1408,6 +1491,9 @@ textarea:active {
   border: none;
   border-radius: 19px;
   background-color: rgba(255, 255, 255, 0.2);
+/*  в safari без запрета на переносы вот так:
+  https://monosnap.com/file/yQxeLpSYmXAKjRRoyKvEeUzXwboifH*/
+  white-space: nowrap;
 }
 
 .filter-form legend {
@@ -1420,7 +1506,6 @@ textarea:active {
 .sorting select {
   font-size: 16px;
   min-width: 164px;
-  padding: 0;
   cursor: pointer;
   color: #FFFFFF;
   border: none;
@@ -1428,6 +1513,16 @@ textarea:active {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  outline: none;
+}
+
+.sorting:hover {
+  background-color: #ffffff;
+}
+
+.sorting:hover select {
+  color: #343434;
+  background-position: 142px -504px;
 }
 
 .range-filter {
@@ -1498,11 +1593,11 @@ textarea:active {
   cursor: pointer;
 }
 
-.fat-content input + label:last-child {
+.fat-content label:last-child {
   margin-right: 0;
 }
 
-.fat-content input + label::before {
+.fat-content label::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -1549,8 +1644,7 @@ textarea:active {
   width: 2px;
   height: 7px;
   content: "";
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
   background-color: #F8F7F4;
 }
 
@@ -1561,8 +1655,7 @@ textarea:active {
   width: 2px;
   height: 12px;
   content: "";
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   background-color: #F8F7F4;
 }
 

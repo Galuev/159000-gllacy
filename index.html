@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:500,400,700,900&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/normalize.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
   </head>
   <body>
+    <input type="radio" name="slide" id="btn-1" checked>
+    <input type="radio" name="slide" id="btn-2">
+    <input type="radio" name="slide" id="btn-3">
     <div class="index-wrapper">
-      <!-- HEADER -->
       <header class="main-header">
         <div class="container clearfix">
           <h1 class="header-logo">
@@ -49,7 +51,7 @@
             <form action="#" method="get" class="header-search-form">
               <label for="search-request" class="search-label"><span class="hidden">Поиск</span></label>
               <div class="header-popup search-popup">
-                <input type="search" name="search-for" placeholder="Что ищем?" id="search-request">
+                <input type="search" name="search-for" placeholder="Что ищем?" class="input" id="search-request">
                 <button class="hidden" type="submit">Искать</button>
               </div>
             </form>
@@ -58,9 +60,9 @@
                 <legend class="login-label">Вход</legend>
                 <div class="header-popup login-popup">
                   <label for="login-user-email" class="hidden">Электронная почта</label>
-                  <input type="text" name="login-email" placeholder="Электронная почта" id="login-user-email">
+                  <input type="text" name="login-email" placeholder="Электронная почта" class="input" id="login-user-email">
                   <label for="login-user-password" class="hidden">Пароль</label>
-                  <input type="password" name="login-password" placeholder="Пароль" id="login-user-password">
+                  <input type="password" name="login-password" placeholder="Пароль" class="input" id="login-user-password">
                   <button class="btn btn-small" type="submit">Войти</button>
                   <div class="login-options">
                     <a href="#" class="a-bg">Забыли пароль?</a>
@@ -125,9 +127,9 @@
                     <span class="cart-total-sum">Итого: 750 руб.</span>
                     <a href="#" class="btn btn-small">Оформить заказ</a>
                 </div>
-              </div><!-- header-popup cart-popup -->
-            </div><!-- header-cart-block -->
-          </div> <!-- user-area -->
+              </div>
+            </div>
+          </div>
           <div class="header-contact-area">
             <p>
               С 10 до 20, ежедневно<br>
@@ -136,36 +138,29 @@
               </strong>
             </p>
           </div>
-        </div> <!-- container -->
+        </div>
       </header>
-      <!-- /HEADER -->
-      <!-- MAIN -->
       <main>
         <div class="container">
-          <!-- HERO-SLIDER -->
           <div class="hero-slider">
-            <ul>
-              <li>
-                <a href="#" class="slide-title">Крем-брюле и пломбир<br> с малиновым джемом</a><br>
-                <a href="#" class="btn btn-big">Давайте оба!</a>
-              </li>
-              <li>
-                <a href="#" class="slide-title">Шоколадный пломбир<br> и лимонный сорбет</a><br>
-                <a href="#" class="btn btn-big">Давайте оба!</a>
-              </li>
-              <li>
-                <a href="#" class="slide-title">Пломбир с помадкой<br> и клубничный щербет</a><br>
-                <a href="#" class="btn btn-big">Давайте оба!</a>
-              </li>
-            </ul>
+            <div class="slide" id="slide1">
+              <a href="#" class="slide-title">Крем-брюле и пломбир<br> с малиновым джемом</a><br>
+              <a href="#" class="btn btn-big">Давайте оба!</a>
+            </div>
+            <div class="slide" id="slide2">
+              <a href="#" class="slide-title">Шоколадный пломбир<br> и лимонный сорбет</a><br>
+              <a href="#" class="btn btn-big">Давайте оба!</a>
+            </div>
+            <div class="slide" id="slide3">
+              <a href="#" class="slide-title">Пломбир с помадкой<br> и клубничный щербет</a><br>
+              <a href="#" class="btn btn-big">Давайте оба!</a>
+            </div>
             <div class="hero-slider-controls">
-              <span class="slider-toggle slider-toggle-current">1</span>
-              <span class="slider-toggle">2</span>
-              <span class="slider-toggle">3</span>
+              <label for="btn-1"></label>
+              <label for="btn-2"></label>
+              <label for="btn-3"></label>
             </div>
           </div>
-          <!-- /HERO-SLIDER -->
-          <!-- PROMO -->
           <section class="clearfix">
             <div class="promo-item promo-raspberries half-wide">
               <h2>Малинка даром!</h2>
@@ -182,13 +177,11 @@
               <a href="#" class="btn btn-middle">Хочу шоколадки!</a>
             </div>
           </section>
-          <!-- /PROMO -->
-          <!-- POPULAR-PRODUCTS -->
           <section class="products-row clearfix">
             <article class="product-box-wrapper">
               <div class="product-box popular">
                 <div class="product-box-preview">
-                  <img src="img/products/product_01.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+                  <img src="img/products/product_01.png" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
                   <span class="product-box-price">
                     <span class="pb-sum">310</span>
                     <span class="pb-currency">руб</span>
@@ -204,7 +197,7 @@
             <article class="product-box-wrapper">
               <div class="product-box popular">
                 <div class="product-box-preview">
-                  <img src="img/products/product_02.png" alt="Сливочно-кофейное с кусочками шоколада">
+                  <img src="img/products/product_02.png" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
                   <span class="product-box-price">
                     <span class="pb-sum">380</span>
                     <span class="pb-currency">руб</span>
@@ -220,7 +213,7 @@
             <article class="product-box-wrapper">
               <div class="product-box popular">
                 <div class="product-box-preview">
-                  <img src="img/products/product_03.png" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+                  <img src="img/products/product_03.png" width="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
                   <span class="product-box-price">
                     <span class="pb-sum">355</span>
                     <span class="pb-currency">руб</span>
@@ -236,7 +229,7 @@
             <article class="product-box-wrapper">
               <div class="product-box popular">
                 <div class="product-box-preview">
-                  <img src="img/products/product_04.png" alt="Сливочное крем-брюле с карамельной подливкой">
+                  <img src="img/products/product_04.png" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
                   <span class="product-box-price">
                     <span class="pb-sum">415</span>
                     <span class="pb-currency">руб</span>
@@ -250,7 +243,6 @@
               </div>
             </article>
           </section>
-          <!-- FEATURES -->
           <section class="features clearfix">
             <h2>Магазин Глейси  — это онлайн и офлайн магазин по продаже мороженого собственного производства на развес</h2>
             <div class="features-content">
@@ -270,8 +262,10 @@
               </p>
             </div>
           </section>
-          <!-- /VARIABLE-CONTENT -->
           <div class="variable-index-content clearfix">
+          <!-- без этого дива получается вот так: https://monosnap.com/file/dNU4KwN0yZnXcfGjJRsvXuhlGM95zm
+          Если дочерние блоки ставить inline-block'ом - неудобно избавиться от пробела.  А с float все, что снизу -
+          лезет наверх. -->
             <div class="variable-content-item blog-ad half-wide">
               <h2>Новое в нашем блоге</h2>
               <h3>
@@ -281,17 +275,20 @@
             <div class="variable-content-item subscription half-wide">
               <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =) </p>
               <form action="#" method="post" class="subscription-form clearfix">
-                <label for="subscribing-email" class="hidden">Электронная почта</label>
-                <div class="subscription-input-area">
-                  <input type="text" name="subscriber-email" placeholder="Электронная почта" id="subscribing-email">
-                </div>
                 <button class="btn" type="submit">Отправить</button>
+                <div class="subscription-input-area">
+                  <label for="subscribing-email" class="hidden">Электронная почта</label>
+                  <input type="text" name="subscriber-email" placeholder="Электронная почта" class="input" id="subscribing-email">
+                </div>
               </form>
             </div>
           </div>
-        </div> <!-- container -->
-        <!-- CONTACT-INFO -->
+        </div>
         <div class="index-contact-info">
+        <!-- Тут у меня логика такая: вся страница обернута в container - он от 900px до 1200px тянется,
+        но в том месте, где карта - он прерывается и я вставляю в него index-contact-info - он тянется
+        на всю ширину. В нем два дочерних: карта (width: 100%) и container, относительно
+        которого (ему тут, как раз, навешиваю pos: relative) позиционирую contact-box -->
           <div class="container">
             <div class="contact-box">
               <p>
@@ -309,14 +306,12 @@
                 </strong><br>
                 (с 10 до 20 ежедневно)
               </p>
-              <a href="#" class="btn">Форма обратной связи</a>
+              <a href="#" class="btn show-feedback-modal">Форма обратной связи</a>
             </div>
-          </div><!-- container container-contact -->
+          </div>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6008858503708!2d30.32293845969631!3d59.938764622902696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1454332314282" width="100%" height="430" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
       </main>
-      <!-- /MAIN -->
-      <!-- FOOTER -->
       <footer class="main-footer container clearfix">
         <section class="footer-social">
           <ul>
@@ -349,22 +344,20 @@
           <a href="https://htmlacademy.ru" class="a-nobg">HTML Academy</a> &copy; 2016
         </p>
       </footer>
-      <!-- /FOOTER -->
-      <!-- FEEDBACK POPUP -->
          <div class="feedback-popup">
           <button type="button" class="close-popup">Закрыть</button>
           <h4>Мы обязательно вам ответим!</h4>
           <form action="#" method="post" class="feedback-form">
             <div class="feedback-form-group">
-              <input type="text" name="name" id="person-name">
+              <input type="text" name="name" class="input" id="person-name" placeholder="Как вас зовут?">
               <label for="person-name">Как вас зовут?</label>
             </div>
             <div class="feedback-form-group">
-              <input type="text" name="email" id="person-email">
+              <input type="text" name="email" class="input" id="person-email" placeholder="Ваша почта для ответа?">
               <label for="person-email">Ваша почта для ответа?</label>
             </div>
             <div class="feedback-form-group">
-              <textarea name="comment" id="person-comment" cols="30" rows="10"></textarea>
+              <textarea name="comment" class="input" id="person-comment" cols="30" rows="10">Напишите что-нибудь...</textarea>
               <label for="person-comment">Напишите что-нибудь...</label>
             </div>
             <div class="modal-btn">
@@ -373,9 +366,8 @@
           </form>
         </div>
         <div class="popup-overlay"></div>
-      <!-- /FEEDBACK POPUP -->
-      <!-- /MODAL POPUPS -->
       </div>
     </div>
+  <script src="js/main.min.js"></script>
   </body>
 </html>

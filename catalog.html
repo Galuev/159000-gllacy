@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:500,400,700,900&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/normalize.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
   </head>
   <body>
-    <!-- HEADER -->
     <header class="main-header">
       <div class="container clearfix">
         <a href="index.html">
@@ -50,7 +49,7 @@
           <form action="#" method="get" class="header-search-form">
             <label for="search-request" class="search-label"><span class="hidden">Поиск</span></label>
             <div class="header-popup search-popup">
-              <input type="search" name="search-for" placeholder="Что ищем?" id="search-request">
+              <input type="search" name="search-for" placeholder="Что ищем?" class="input" id="search-request">
               <button class="hidden" type="submit">Искать</button>
             </div>
           </form>
@@ -59,9 +58,9 @@
               <legend class="login-label">Вход</legend>
               <div class="header-popup login-popup">
                 <label for="login-user-email" class="hidden">Электронная почта</label>
-                <input type="text" name="login-email" placeholder="Электронная почта" id="login-user-email">
+                <input type="text" name="login-email" placeholder="Электронная почта" class="input" id="login-user-email">
                 <label for="login-user-password" class="hidden">Пароль</label>
-                <input type="password" name="login-password" placeholder="Пароль" id="login-user-password">
+                <input type="password" name="login-password" placeholder="Пароль" class="input" id="login-user-password">
                 <button class="btn btn-small" type="submit">Войти</button>
                 <div class="login-options">
                   <a href="#" class="a-bg">Забыли пароль?</a>
@@ -126,9 +125,9 @@
                   <span class="cart-total-sum">Итого: 750 руб.</span>
                   <a href="#" class="btn btn-small">Оформить заказ</a>
               </div>
-            </div><!-- header-popup cart-popup -->
-          </div><!-- header-cart-block -->
-        </div> <!-- user-area -->
+            </div>
+          </div>
+        </div>
         <div class="header-contact-area">
           <p>
             С 10 до 20, ежедневно<br>
@@ -137,7 +136,7 @@
             </strong>
           </p>
         </div>
-      </div> <!-- container -->
+      </div>
     </header>
     <main class="container container-catalog">
       <header class="catalog-header">
@@ -148,7 +147,6 @@
         </nav>
         <h1>Сливочное мороженое</h1>
       </header>
-        <!-- FILTER -->
       <section class="catalog-filter clearfix">
         <form action="#" method="get" class="filter-form">
           <fieldset class="sorting">
@@ -185,9 +183,9 @@
           </fieldset>
           <fieldset class="fill-content">
             <legend>Наполнители:</legend>
-            <input type="checkbox" name="fill-content" id="chocolate" checked>
+            <input type="checkbox" name="fill-content" id="chocolate">
             <label for="chocolate"><span></span>шоколадные</label>
-            <input type="checkbox" name="fill-content" id="sugar-powder" checked>
+            <input type="checkbox" name="fill-content" id="sugar-powder">
             <label for="sugar-powder"><span></span>сахарные присыпки</label>
             <input type="checkbox" name="fill-content" id="fruits">
             <label for="fruits"><span></span>фрукты</label>
@@ -199,14 +197,13 @@
           <button class="filter-btn" type="submit">Применить</button>
         </form>
       </section>
-        <!-- /FILTER -->
       <div class="catalog-layout">
         <div class="products-area">
           <section class="products-row clearfix">
               <article class="product-box-wrapper">
                 <div class="product-box">
                   <div class="product-box-preview">
-                    <img src="img/products/product_01.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+                    <img src="img/products/product_01.png" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
                     <span class="product-box-price">
                       <span class="pb-sum">310</span>
                       <span class="pb-currency">руб</span>
@@ -222,7 +219,7 @@
               <article class="product-box-wrapper">
                 <div class="product-box">
                   <div class="product-box-preview">
-                    <img src="img/products/product_02.png" alt="Сливочно-кофейное с кусочками шоколада">
+                    <img src="img/products/product_02.png" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
                     <span class="product-box-price">
                       <span class="pb-sum">380</span>
                       <span class="pb-currency">руб</span>
@@ -238,7 +235,7 @@
               <article class="product-box-wrapper">
                 <div class="product-box">
                   <div class="product-box-preview">
-                    <img src="img/products/product_03.png" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+                    <img src="img/products/product_03.png" width="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
                     <span class="product-box-price">
                       <span class="pb-sum">355</span>
                       <span class="pb-currency">руб</span>
@@ -254,7 +251,7 @@
               <article class="product-box-wrapper">
                 <div class="product-box">
                   <div class="product-box-preview">
-                    <img src="img/products/product_04.png" alt="Сливочное крем-брюле с карамельной подливкой">
+                    <img src="img/products/product_04.png" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
                     <span class="product-box-price">
                       <span class="pb-sum">415</span>
                       <span class="pb-currency">руб</span>
@@ -272,7 +269,7 @@
               <article class="product-box-wrapper">
                 <div class="product-box">
                   <div class="product-box-preview">
-                    <img src="img/products/product_05.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+                    <img src="img/products/product_05.png" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
                     <span class="product-box-price">
                       <span class="pb-sum">310</span>
                       <span class="pb-currency">руб</span>
@@ -288,7 +285,7 @@
               <article class="product-box-wrapper">
                 <div class="product-box">
                   <div class="product-box-preview">
-                    <img src="img/products/product_06.png" alt="Сливочно-кофейное с кусочками шоколада">
+                    <img src="img/products/product_06.png" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
                     <span class="product-box-price">
                       <span class="pb-sum">380</span>
                       <span class="pb-currency">руб</span>
@@ -304,7 +301,7 @@
               <article class="product-box-wrapper">
                 <div class="product-box">
                   <div class="product-box-preview">
-                    <img src="img/products/product_07.png" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+                    <img src="img/products/product_07.png" width="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
                     <span class="product-box-price">
                       <span class="pb-sum">355</span>
                       <span class="pb-currency">руб</span>
@@ -320,7 +317,7 @@
               <article class="product-box-wrapper">
                 <div class="product-box">
                   <div class="product-box-preview">
-                    <img src="img/products/product_08.png" alt="Сливочное крем-брюле с карамельной подливкой">
+                    <img src="img/products/product_08.png" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
                     <span class="product-box-price">
                       <span class="pb-sum">415</span>
                       <span class="pb-currency">руб</span>
@@ -338,7 +335,7 @@
               <article class="product-box-wrapper">
                 <div class="product-box">
                   <div class="product-box-preview">
-                    <img src="img/products/product_09.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+                    <img src="img/products/product_09.png" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
                     <span class="product-box-price">
                       <span class="pb-sum">310</span>
                       <span class="pb-currency">руб</span>
@@ -354,7 +351,7 @@
               <article class="product-box-wrapper">
                 <div class="product-box">
                   <div class="product-box-preview">
-                    <img src="img/products/product_10.png" alt="Сливочно-кофейное с кусочками шоколада">
+                    <img src="img/products/product_10.png" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
                     <span class="product-box-price">
                       <span class="pb-sum">380</span>
                       <span class="pb-currency">руб</span>
@@ -370,7 +367,7 @@
               <article class="product-box-wrapper">
                 <div class="product-box">
                   <div class="product-box-preview">
-                    <img src="img/products/product_11.png" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+                    <img src="img/products/product_11.png" width="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
                     <span class="product-box-price">
                       <span class="pb-sum">355</span>
                       <span class="pb-currency">руб</span>
@@ -386,7 +383,7 @@
               <article class="product-box-wrapper">
                 <div class="product-box">
                   <div class="product-box-preview">
-                    <img src="img/products/product_12.png" alt="Сливочное крем-брюле с карамельной подливкой">
+                    <img src="img/products/product_12.png" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
                     <span class="product-box-price">
                       <span class="pb-sum">415</span>
                       <span class="pb-currency">руб</span>
@@ -400,7 +397,7 @@
                 </div>
               </article>
           </section>
-        </div> <!-- products-area -->
+        </div>
         <div class="paginator">
           <a class="prev" href="#prev">&larr;</a>
           <span class="paginator-current">1</span>
@@ -412,8 +409,6 @@
         </div>
       </div>
     </main>
-    <!-- /MAIN -->
-    <!-- FOOTER -->
     <footer class="main-footer container clearfix footer-inner-page">
       <section class="footer-social">
         <ul>
@@ -446,16 +441,5 @@
         <a href="https://htmlacademy.ru" class="a-nobg">HTML Academy</a> &copy; 2016
       </p>
     </footer>
-    <!-- /FOOTER -->
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
