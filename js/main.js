@@ -16,6 +16,10 @@ var storage_feedback_email = localStorage.getItem("feedback_email");
 
 var blue_labels = modal.querySelector("label");
 
+var product_preview = document.querySelectorAll(".product-box .btn");
+
+// var product_preview = document.querySelectorAll(".product-box .btn");
+
 // открываю модальное окно + проверяю local storage
 modal_show.addEventListener("click", function(e) {
   e.preventDefault();
@@ -72,6 +76,8 @@ window.addEventListener("keydown", function(e) {
 });
 
 // убираю переходы по ссылкам (быстрый просмотр) Д-18
-function product_preview(e) {
-  e.preventDefault();
-};
+for (var i = 0; i < product_preview.length; i++) {
+    product_preview[i].addEventListener('click', function(event) {
+       event.preventDefault();
+    });
+}
