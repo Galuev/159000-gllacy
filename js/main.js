@@ -70,3 +70,8 @@ window.addEventListener("keydown", function(e) {
     }
   }
 });
+
+// убираю переходы по ссылкам (быстрый просмотр) Д-18
+function product_preview(e) {
+  e.preventDefault();
+};
