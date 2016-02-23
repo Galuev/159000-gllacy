@@ -672,14 +672,17 @@ img {
 
 .product-box-price {
   position: absolute;
-  bottom: 20px;
-  left: 0;
+  bottom: 25px;
+  left: -1px;
+  font-size: 30px;
+  font-weight: 700;
   text-shadow: 0 1px 3px rgba(49, 50, 53, 0.5);
 }
 
 .pb-sum {
   font-size: 45px;
   font-weight: 700;
+  margin-right: 5px;
 }
 
 .pb-currency {
@@ -687,13 +690,11 @@ img {
   display: inline-block;
   width: 31px;
   height: 38px;
+  margin-left: -9px;
+  margin-bottom: -4px;
+  margin-right: -5px;
   vertical-align: bottom;
   background: url("../img/rouble-sign.png") no-repeat;
-}
-
-.pb-amount {
-  font-size: 30px;
-  font-weight: 700;
 }
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = FOOTER */
@@ -1543,13 +1544,6 @@ body > input[type="radio"] {
   z-index: 50;
 }
 
-/*При ховере цвет текста в селекте должен стать черным, а фон белым.
-Но, например, в firefox'е и всплывающий блок с option'ами
-окрашивается там. Он там по умолчанию (по крайней мере на mac)
-белого цвета и темный цвет текста option'ов видно только при ховере,
-а если убрать, то белый цвет текста сливается с белым фоном:
-https://monosnap.com/file/M7wgaKYQ0zBB8I0ewczXQf9qmtMvja
-Решил с помощью :focus*/
 .sorting:hover,
 .sorting:hover .outer-select::after {
   background-color: #ffffff;
@@ -1563,13 +1557,9 @@ https://monosnap.com/file/M7wgaKYQ0zBB8I0ewczXQf9qmtMvja
   background-position: -4px -560px;
 }
 
-/*:focus решает проблему с курсором вне select'а, но
-после выбора опции - селект горит темным цветом:
-https://monosnap.com/file/TIPetH18zTeJw1D7vHH5z7dz0lyV4N
-Если фокус на что-ть другое перевести, или в любом другом месте
-кликнуть - все становится ок.*/
-.sort-product:focus {
+.sort-product option {
   color: #343434;
+  background-color: #ffffff;
 }
 
 .range-filter {
