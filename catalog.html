@@ -151,12 +151,14 @@
         <form action="#" method="get" class="filter-form">
           <fieldset class="sorting">
             <legend>Сортировка:</legend>
-            <select name="sort-by" id="product-sorting">
-              <option value="popular">по популярности</option>
-              <option value="chaep-first">сначала недорогие</option>
-              <option value="">сначала дорогие</option>
-              <option value="light">по жирности</option>
-            </select>
+            <div class="outer-select">
+              <select name="sort-by" class="sort-product" id="product-sorting">
+                <option value="popular">по популярности</option>
+                <option value="chaep-first">сначала недорогие</option>
+                <option value="">сначала дорогие</option>
+                <option value="light">по жирности</option>
+              </select>
+            </div>
           </fieldset>
           <div class="range-filter">
             <span class="range-filter-text">
